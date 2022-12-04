@@ -1,0 +1,24 @@
+ 1999  curl  http://52.36.42.135:6443
+ 2000  curl  https://52.36.42.135:6443
+ 2001  ls
+ 2002  cd /etc/pki/
+ 2003  ls
+ 2004  cd /etc/kubernetes/pki/
+ 2005  ls
+ 2006  curl --cacert ca.crt  https://52.36.42.135:6443
+ 2007  curl --cacert ca.crt  https://52.36.42.135:6443/version
+ 2008  curl --cacert ca.crt  https://52.36.42.135:6443/api/v1/namespaces/default/pods
+ 2009  ls
+ 2010  cd
+ 2011  mkdir keys
+ 2012  cp /etc/kubernetes/pki/ca.crt keys/
+ 2013  cd keys/
+ 2014  ls
+ 2015  cat /root/.kube/config
+ 2016  vim admin.crt
+ 2017  vim admin.key
+ 2018  curl --cacert ca.crt --cert admin.crt --key admin.key  https://52.36.42.135:6443/api/v1/namespaces/default/pods
+ 2019  cat admin.crt  | base64 -d  > mainadmin.crt
+ 2020  cat admin.key  | base64 -d  > mainadmin.key
+ 2021  curl --cacert ca.crt --cert mainadmin.crt --key mainadmin.key  https://52.36.42.135:6443/api/v1/namespaces/default/pods
+

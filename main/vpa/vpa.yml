@@ -8,4 +8,4 @@ spec:
     kind:       Deployment
     name:       my-auto-deployment
   updatePolicy:
-    updateMode: "Off"
+    updateMode: "Auto"
