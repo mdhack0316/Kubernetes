@@ -13,7 +13,7 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: pod1
+            name:  modi
             port:
               number: 80
 
@@ -21,6 +21,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: pod2
+            name: mayank
             port:
               number: 80
